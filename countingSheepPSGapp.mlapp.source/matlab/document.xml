@@ -1588,11 +1588,6 @@
             getEEGLABpath(app);
             progress.Value = 2/5; progress.Message = ['Checking for updates...' newline]; pause(1);
             checkForUpdates(app);
-            progress.Value = 3/5; progress.Message = ['Checking for valid license...' newline]; pause(0.5);
-            [OK] = checkForLicence(app);
-            if OK == 0 % did not complete registration
-                return
-            end
             progress.Value = 4/5; progress.Message = ['Loading montage...' newline]; pause(0.5);
             sleep_montage_default(app);
             updateMontageList(app);
@@ -1725,13 +1720,9 @@
                 end
             end
             
-            function [OK] = checkForLicence(app)
-                % check for licence
-                [OK] = licenceCheck(app);
-                if OK == 0 % did not complete registration
-                    quitCountingSheep(app)
-                    return
-                end
+            function [OK] = checkForLicence(app) %#ok<INUSD>
+                % registration removed — always approved
+                OK = 1;
             end
                         
             function checkIfICA(app)
@@ -4818,15 +4809,9 @@
 
         % Menu selected function: registerCountingSheep_m
         function registerCountingSheep_m_Callback(app, event)
-            % check for licence
-            [OK] = licenceCheck(app);
-            if OK == 0 % did not complete registration
-                quitCountingSheep(app)
-                return
-            else
-                choice = uiconfirm(app.CountingSheepMain,'Thank you for registering Counting Sheep PSG!','Software Registration','Icon','success');
-                waitfor(choice);
-            end
+            % registration removed — always approved
+            choice = uiconfirm(app.CountingSheepMain,'Thank you for registering Counting Sheep PSG!','Software Registration','Icon','success');
+            waitfor(choice);
         end
 
         % Callback function: hKeysInfo_m, help_t
