@@ -2,6 +2,20 @@
 
 EEGLAB-compatible manual sleep stage scoring, signal processing and event marking of polysomnographic (PSG) data for MATLAB.
 
+---
+
+## About this fork
+
+This is a community fork of [stuartfogel/CountingSheepPSG](https://github.com/stuartfogel/CountingSheepPSG) created to bring the project into full compliance with its stated GPL v3.0 licence by removing closed-source components.
+
+### Changes from upstream
+
+- **Removed closed-source registration gate** — `dependencies/licenceCheck.p` and `dependencies/generateKey.p` were pre-compiled MATLAB P-code files whose source was not available. These files are incompatible with the GPL v3.0 licence under which the rest of the project is distributed. The registration check in the app has been replaced with a stub that always succeeds, restoring free use as required by the licence.
+- **App source unpacked** — `countingSheepPSGapp.mlapp` has been replaced by its unpacked source in `countingSheepPSGapp.mlapp.source/`, making all app code fully readable and auditable.
+- **CI release pipeline** — a GitHub Actions workflow (`.github/workflows/release.yml`) repackages the `.mlapp` from source and publishes a full release ZIP on version tag push, so no binary files need to be committed to the repository.
+
+---
+
 ![screenshot](https://user-images.githubusercontent.com/8634128/219664342-3e338ef9-6ed1-4884-b0b8-6aa0997209c1.jpg)
 
 ## Getting Started
