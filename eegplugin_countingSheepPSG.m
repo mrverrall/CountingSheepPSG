@@ -95,7 +95,7 @@ function vers = eegplugin_countingSheepPSG(fig, trystrs, catchstrs)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % version
-vers = '1.37'; % minor update: fixed issue with edit lights on tag
+vers = '1.37.1'; % fork: removed closed-source registration gate for GPL compliance
 
 % handle input arguments from EEGLAB
 if nargin < 3

@@ -1686,7 +1686,7 @@
                 % check EEGLAB version against GitHub
                 gitVers = '';
                 try
-                    gitText = webread('https://github.com/stuartfogel/CountingSheepPSG/blob/main/eegplugin_countingSheepPSG.m'); % load script on github website as text
+                    gitText = webread('https://github.com/mrverrall/CountingSheepPSG/blob/main/eegplugin_countingSheepPSG.m'); % load script on github website as text
                     gitVers = extractBetween(gitText,'vers = ''',''';'); % extract version from text
                     % get local version to check for updates
                     localText = fileread('eegplugin_countingSheepPSG.m'); % load script as text
