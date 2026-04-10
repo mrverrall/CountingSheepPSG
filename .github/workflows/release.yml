@@ -1,0 +1,39 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Repackage .mlapp from source
+        run: |
+          cd countingSheepPSGapp.mlapp.source
+          zip -r ../countingSheepPSGapp.mlapp "[Content_Types].xml" _rels/ appdesigner/ matlab/ metadata/
+          cd ..
+
+      - name: Assemble release folder
+        run: |
+          mkdir -p release/CountingSheepPSG
+          cp countingSheepPSGapp.mlapp release/CountingSheepPSG/
+          cp countingSheepPSG.m pop_countingSheepPSG.m eegplugin_countingSheepPSG.m release/CountingSheepPSG/
+          cp LICENSE README.md "User Manual.pdf" release/CountingSheepPSG/
+          cp SampleSetUnscored.set release/CountingSheepPSG/
+          cp -r dependencies/ icons/ montages/ release/CountingSheepPSG/
+          cd release && zip -r ../CountingSheepPSG-${{ github.ref_name }}.zip CountingSheepPSG/
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: Counting Sheep PSG ${{ github.ref_name }}
+          body: See README.md for installation instructions.
+          files: CountingSheepPSG-${{ github.ref_name }}.zip
