@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?><metadata xmlns="http://schemas.mathworks.com/appDesigner/app/2017/appMetadata"><description>Stuart Fogel
+School of Psychology, University of Ottawa, Canada
+uOttawa Sleep Research Laboratory
+https://www.uottawa-sleeplab.ca
+sfogel@uottawa.ca
+
+A revision of sleepSMG. sleepSMG originally developed by:
+Stephanie Greer and Jared Saletin
+Walker Lab, UC Berkeley, 2011
+https://sleepsmg.sourceforge.net
+
+REQUIREMENTS:
+MATLAB version R2020b or later
+Signal Processing Toolbox
+Statistics and Machine Learning Toolbox
+EEGLAB 2023 or later (https://eeglab.org)
+
+Copyright (C) Stuart Fogel &amp; Sleep Well, 2022.  
+See the GNU General Public License v3.0 for more information.
+
+This file is part of 'Counting Sheep PSG'.
+See https://github.com/stuartfogel/CountingSheepPSG for details.</description><MLAPPVersion>2</MLAPPVersion><minimumSupportedMATLABRelease>R2018a</minimumSupportedMATLABRelease><screenshotMode>auto</screenshotMode><uuid>672f7b3c-a3fd-4b52-8d86-42bd7b89d7b3</uuid><AppType>Standard</AppType><componentProducts/><imageRelativePaths><imageRelativePath path="icons/sheep_t_image.png"/><imageRelativePath path="icons/open_t_image.png"/><imageRelativePath path="icons/save_t_image.png"/><imageRelativePath path="/icons/scaleSmall_t_image.png"/><imageRelativePath path="/icons/scaleBigger_t_image.png"/><imageRelativePath path="/icons/resetScale_t_image.png"/><imageRelativePath path="icons/playPause_t_image.png"/><imageRelativePath path="/icons/lightsOff_t_image.png"/><imageRelativePath path="/icons/lightsOn_t_image.png"/><imageRelativePath path="/icons/jumpTo_t_image.png"/><imageRelativePath path="icons/mark_t_image.png"/><imageRelativePath path="icons/volt_t_image.png"/><imageRelativePath path="icons/ica_t_image.png"/></imageRelativePaths><userComponents/></metadata>
